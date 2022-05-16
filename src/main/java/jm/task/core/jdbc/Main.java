@@ -13,12 +13,10 @@ public class Main {
         UserDao userDao = new UserDaoJDBCImpl();
 
         userDao.createUsersTable();
-
-        userDao.saveUser("Name1", "LastName1", (byte) 20);
-        userDao.saveUser("Name2", "LastName2", (byte) 25);
-        userDao.saveUser("Name3", "LastName3", (byte) 31);
-        userDao.saveUser("Name4", "LastName4", (byte) 38);
-
+        for (int i = 0; i < 4; i++) {
+            userDao.saveUser("Name" + i, "LastName" + i, (byte) (i + 15));
+            System.out.println("Пользователь Name" + i + "добавлен в базу данных");
+        }
         userDao.removeUserById(1);
         userDao.getAllUsers();
         userDao.cleanUsersTable();
