@@ -15,7 +15,7 @@ public class Main {
         userDao.createUsersTable();
         for (int i = 0; i < 4; i++) {
             userDao.saveUser("Name" + i, "LastName" + i, (byte) (i + 15));
-            System.out.println("Пользователь Name" + i + "добавлен в базу данных");
+            System.out.println("Пользователь Name" + i + " добавлен в базу данных");
         }
         userDao.removeUserById(1);
         userDao.getAllUsers();
