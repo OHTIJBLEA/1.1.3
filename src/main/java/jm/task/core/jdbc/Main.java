@@ -21,9 +21,9 @@ public class Main {
             userDao.saveUser("Name" + i, "LastName" + i, (byte) (i + 10));
             System.out.println("Пользователь Name" + i + " добавлен в базу данных");
         }
-//        userDao.removeUserById(1);
-//        userDao.getAllUsers();
-//        userDao.cleanUsersTable();
-//        userDao.dropUsersTable();
+        userDao.removeUserById(1);
+        userDao.getAllUsers().stream().forEach(System.out::println);
+        userDao.cleanUsersTable();
+        userDao.dropUsersTable();
     }
 }
