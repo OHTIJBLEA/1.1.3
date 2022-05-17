@@ -18,7 +18,7 @@ public class Main {
             System.out.println("Пользователь Name" + i + " добавлен в базу данных");
         }
         userDao.removeUserById(1);
-        userDao.getAllUsers();
+        userDao.getAllUsers().stream().forEach(System.out::println);
         userDao.cleanUsersTable();
         userDao.dropUsersTable();
     }
