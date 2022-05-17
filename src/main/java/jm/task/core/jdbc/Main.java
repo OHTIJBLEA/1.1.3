@@ -15,15 +15,14 @@ public class Main {
         Util.getSessionFactory();
         UserDao userDao = new UserDaoHibernateImpl();
 
-
         userDao.createUsersTable();
         for (int i = 0; i < 4; i++) {
             userDao.saveUser("Name" + i, "LastName" + i, (byte) (i + 10));
             System.out.println("Пользователь Name" + i + " добавлен в базу данных");
         }
-//        userDao.removeUserById(1);
-//        userDao.getAllUsers();
-//        userDao.cleanUsersTable();
-//        userDao.dropUsersTable();
+        userDao.removeUserById(1);
+        userDao.getAllUsers().stream().forEach(System.out::println);
+        userDao.cleanUsersTable();
+        userDao.dropUsersTable();
     }
 }
